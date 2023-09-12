@@ -6,7 +6,7 @@
 
 https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/
 
-#Once you have the currentversion you need update the parameter version number on line 5: 
+#Once you have the currentversion you need update the parameter version number on line 11: 
 
 $onlineVersion = "latest version"
 
