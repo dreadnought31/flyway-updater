@@ -23,7 +23,9 @@ i.e C:\ change to D:\
 It should give you the below output:
 
 Transcript started, output file is D:\flywayinstall.txt
+
 The new path (D:\flyway) already exists in the Path environment variable.
+
 Cleaning up old Flyway installation
 
 
