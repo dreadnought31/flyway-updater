@@ -35,14 +35,22 @@ Cleaning up old Flyway installation
 Mode                LastWriteTime         Length Name                          
 ----                -------------         ------ ----                          
 d-----        9/12/2023   5:01 PM                Flyway                        
+
 Folder Created successfully
+
 Download and install the latest Flyway version
 d-----        9/12/2023   5:01 PM                downloads                     
+
 Flyway Folder Created successfully
+
 Unzip the file and output to temp folder
+
 Copy all file in D:\temp to flyway folder
+
 Cleanup download and temp files
+
 Confirm Flyway is updated to newest version
+
 Flyway Community Edition 9.22.1 by Redgate
 
 Plugin Name           | Version         | Licensed
