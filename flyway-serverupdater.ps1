@@ -7,7 +7,11 @@
 # Ver 1.3 - AOB 12-09-2023 Updated Parameters section with paths for the script
 
 Start-Transcript -Path "D:\flywayinstall.txt" -append
+
+#Enforce TLS 1.2 on system
+Write-Host "Enforce TLS 1.2 on system" -ForegroundColor Green
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
 # Parameters
 $onlineVersion = "9.22.1"
 $URL = “https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/$onlineVersion/flyway-commandline-$onlineVersion.zip”
@@ -43,7 +47,7 @@ Remove-Item –path $flywayInstallPath\* –recurse
 # Check if folder exist and create if needed, then Download the latest Flyway version
 if (Test-Path $FolderName) {
    
-    Write-Host "Folder Exists" -ForegroundColor Green
+    Write-Host "Flyway Extraction Folder Exists" -ForegroundColor Green
     # Perform Delete file from folder operation
 }
 else
@@ -51,7 +55,7 @@ else
   
     #PowerShell Create directory if not exists
     New-Item $FolderName -ItemType Directory
-    Write-Host "Folder Created successfully" -ForegroundColor Green
+    Write-Host "Flyway Extraction Folder Created successfully" -ForegroundColor Green
 }
 
 #Download and install the latest Flyway version
@@ -60,17 +64,17 @@ Write-Host "Download and install the latest Flyway version" -ForegroundColor Gre
 # Check if folder exist and create if needed, then Download the latest Flyway version
 if (Test-Path $Downloads) {
    
-    Write-Host "Flyway Folder Exists" -ForegroundColor Green
+    Write-Host "Downloads Flyway Folder Exists" -ForegroundColor Green
     # Perform Delete file from folder operation
 }
 else
 {
   
     New-Item $Downloads -ItemType Directory
-    Write-Host "Flyway Folder Created successfully" -ForegroundColor Green
+    Write-Host "Downloads Folder Created successfully" -ForegroundColor Green
 }
 Invoke-WebRequest -URI $URL -OutFile "$Downloads\flyway-commandline-$onlineVersion.zip"
-Write-Host "Unzip the file and output to temp folder" -ForegroundColor Green
+Write-Host "Unzip the file and output to temp Flyway folder" -ForegroundColor Green
 Expand-Archive -Path "$Path" -DestinationPath "$Extractionpath\" -Force
 
 # Copy all file in D:\temp to flyway folder
@@ -78,7 +82,7 @@ Write-Host "Copy all file in D:\temp to flyway folder" -ForegroundColor Green
 Copy-Item -Path "$Extractionpath\flyway*\*" -Destination $flywayInstallPath -Recurse
 
 # Cleanup download and temp files
-Write-Host "Cleanup download and temp files" -ForegroundColor Green
+Write-Host "Cleanup download and temp flyway folders and files" -ForegroundColor Green
 Remove-Item –path "$Extractionpath\*" –recurse
 
 # Confirm new version is installed
