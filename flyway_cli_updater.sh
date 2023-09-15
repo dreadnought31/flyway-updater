@@ -3,14 +3,14 @@
 # Define the Flyway download URL
 FLYWAY_DOWNLOAD_URL="https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline"
 current_version="9.22.1"
-online_version="9.22.1"
+new_version="9.22.1"
 
 #Delete current Flyway directory
 sudo rm -r "/opt/flyway/$current_version"
 echo "Delete current Flyway directory"
 
 # Define the installation directory
-install_dir="/opt/flyway/$online_version"
+install_dir="/opt/flyway/$new_version"
 echo "Define the installation directory"
 
 
@@ -21,7 +21,7 @@ echo "Create the installation directory if it doesn't exist"
 # Download and extract the Flyway archive
 download_link="$FLYWAY_DOWNLOAD_URL/$online_version/flyway-commandline-$online_version-linux-x64.tar.gz"
 wget -qO- "$download_link" | sudo tar -xz -C "$install_dir" --strip-components=1
-echo "Flyway $online_version has been downloaded and installed to $install_dir."
+echo "Flyway $new_version has been downloaded and installed to $install_dir."
 
 #Delete Old Symbolic Link if there
 echo "Delete Old Symbolic Link if there"
