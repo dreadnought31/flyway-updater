@@ -1,6 +1,6 @@
 # flyway-updater
 #Flyway Updater Ver 1.3 by Alan O'Brien.
-#PowerShell script that downloads the current version of flyway community cli and updates it on windows. It will also create a transcript of the install for you, output same below.
+#PowerShell/Bash script that downloads the current version of flyway community cli and updates it on Windows or Linux. It will also create a transcript of the install for you, output same below.
 
 #First thing to do is Check the repo link to get the latest version available
 
